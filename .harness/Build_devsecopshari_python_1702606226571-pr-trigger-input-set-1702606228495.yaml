@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_devsecopshari_python_1702606226571-pr-trigger-input-set
+  identifier: Build_devsecopshari_python_1702606226571prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: phyton
+  pipeline:
+    identifier: Build_devsecopshari_python_1702606226571
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
