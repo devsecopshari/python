@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_devsecopshari_python_1702606226571-push-trigger-input-set
+  identifier: Build_devsecopshari_python_1702606226571pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: phyton
+  pipeline:
+    identifier: Build_devsecopshari_python_1702606226571
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
