@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_devsecopshari_python_1702607161324-pr-trigger-input-set
+  identifier: Build_devsecopshari_python_1702607161324prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: python_project
+  pipeline:
+    identifier: Build_devsecopshari_python_1702607161324
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
