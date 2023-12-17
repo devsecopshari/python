@@ -27,10 +27,27 @@ pipeline:
                       echo "Welcome to Harness CI"
                       python -m pip install --upgrade pip
                       pip install  pytest
+              - step:
+                  type: Background
+                  name: localstack
+                  identifier: localstack
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: localstack/localstack:1.2.0
+                    shell: Sh
+              - step:
+                  type: Run
+                  name: localstack health
+                  identifier: localstack_health
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: curlimages/curl:7.83.1
+                    shell: Sh
+                    command: until curl --fail --silent --max-time 1 http://localstack:4566/health; do sleep 2; done
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
